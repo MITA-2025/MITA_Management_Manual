@@ -1,0 +1,667 @@
+<!DOCTYPE html><html><head>
+      <title>MITA社团管理手册</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.markdown-preview.markdown-preview {
+  font-size: 16px;
+  font-family: "方正春晚龙行体 简 Medium", "Source Han Serif", serif;
+}
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="mita-社团管理手册">MITA 社团管理手册 </h1>
+<hr>
+<h2 id="目录">目录 </h2>
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a>
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80#%E7%A4%BE%E5%9B%A2%E4%BB%8B%E7%BB%8D">社团介绍</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80#%E7%A4%BE%E5%9B%A2%E5%8F%91%E5%B1%95%E5%8E%9F%E5%88%99">社团发展原则</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80#%E4%BC%9A%E5%91%98%E5%AE%88%E5%88%99">会员守则</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84">组织架构</a>
+<ul>
+<li><a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E4%BA%8B%E5%8A%A1%E9%83%A8">事务部</a></li>
+<li><a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E5%AD%A6%E6%9C%AF%E9%83%A8">学术部</a></li>
+<li><a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E7%AB%9E%E8%B5%9B%E9%83%A8">竞赛部</a></li>
+<li><a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E8%BF%90%E8%90%A5%E9%83%A8">运营部</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86">账号管理</a>
+<ul>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E9%82%AE%E7%AE%B1">邮箱</a>
+<ul>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E9%82%AE%E7%AE%B1#%E5%AE%98%E6%96%B9%E9%82%AE%E7%AE%B1">官方邮箱</a></li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E9%82%AE%E7%AE%B1#%E8%B5%9B%E4%BA%8B%E9%82%AE%E7%AE%B1">赛事邮箱</a></li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E9%82%AE%E7%AE%B1#%E8%AF%B4%E6%98%8E">说明</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%9F%9F%E5%90%8D">域名</a>
+<ul>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%9F%9F%E5%90%8D#%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99">官方网站</a></li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%9F%9F%E5%90%8D#%E8%AF%B4%E6%98%8E">说明</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#QQ%E7%BE%A4">QQ 群</a>
+<ul>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#QQ%E7%BE%A4#%E7%A4%BE%E5%9B%A2%E6%80%BB%E7%BE%A4">社团总群</a></li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#QQ%E7%BE%A4#%E2%80%9C%E6%95%B0%E5%AD%A6%E8%BE%BE%E4%BA%BA%E2%80%9D%E5%AD%A3%E5%90%8E%E8%B5%9B%E7%BE%A4">“数学达人”季后赛群</a></li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#QQ%E7%BE%A4#%E2%80%9C%E8%8A%B1%E6%A2%A8%E6%9D%AF%E2%80%9D%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E6%8C%91%E6%88%98%E8%B5%9B%E7%BE%A4">“花梨杯”数学建模挑战赛群</a></li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#QQ%E7%BE%A4#%E8%AF%B4%E6%98%8E">说明</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7">微信公众号</a>
+<ul>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7#%E5%AE%98%E6%96%B9%E5%85%AC%E4%BC%97%E5%8F%B7">官方公众号</a></li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7#%E8%AF%B4%E6%98%8E">说明</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#Github%E8%B4%A6%E5%8F%B7">Github 账号</a>
+<ul>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#Github%E8%B4%A6%E5%8F%B7#%E5%AE%98%E6%96%B9%E8%B4%A6%E5%8F%B7">官方账号</a></li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#Github%E8%B4%A6%E5%8F%B7#%E8%AF%B4%E6%98%8E">说明</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E8%B4%A6%E5%8F%B7">哔哩哔哩账号</a>
+<ul>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E8%B4%A6%E5%8F%B7#%E5%AE%98%E6%96%B9%E8%B4%A6%E5%8F%B7">官方账号</a></li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E8%B4%A6%E5%8F%B7#%E8%AF%B4%E6%98%8E">说明</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%8F%8C%E5%90%91%E6%8E%88%E6%9D%83%E7%AE%A1%E7%90%86">双向授权管理</a>
+<ul>
+<li><a href="#%E5%8F%8C%E5%90%91%E6%8E%88%E6%9D%83%E7%AE%A1%E7%90%86#%E7%9F%A5%E4%B9%8E%E8%B4%A6%E5%8F%B7JokerXin%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%AE%A4">知乎账号 <code>JokerXin的工作室</code></a></li>
+<li><a href="#%E5%8F%8C%E5%90%91%E6%8E%88%E6%9D%83%E7%AE%A1%E7%90%86#Github%E8%B4%A6%E5%8F%B7JokerXin2025">Github 账号 <code>JokerXin2025</code></a></li>
+</ul>
+</li>
+<li><a href="#MITA%E9%A1%B9%E7%9B%AE">MITA 项目</a>
+<ul>
+<li><a href="#MITA%E9%A1%B9%E7%9B%AE#MITA%E6%95%B0%E5%AD%A6%E6%89%8B%E5%86%8C">MITA 数学手册</a>
+<ul>
+<li><a href="#MITA%E9%A1%B9%E7%9B%AE#MITA%E6%95%B0%E5%AD%A6%E6%89%8B%E5%86%8C#%E5%8F%91%E8%A1%8C%E7%89%88%E6%9C%AC">发行版本</a></li>
+</ul>
+</li>
+<li><a href="#MITA%E9%A1%B9%E7%9B%AE#MITA%E6%95%B0%E5%AD%A6%E8%AE%B2%E4%B9%89">MITA 数学讲义</a>
+<ul>
+<li><a href="#MITA%E9%A1%B9%E7%9B%AE#MITA%E6%95%B0%E5%AD%A6%E8%AE%B2%E4%B9%89#%E5%8F%91%E8%A1%8C%E7%89%88%E6%9C%AC">发行版本</a></li>
+</ul>
+</li>
+<li><a href="#MITA%E9%A1%B9%E7%9B%AE#SimpleSystemTeX"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi mathvariant="normal">S</mi><mrow><mi mathvariant="normal">y</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi></mrow></msubsup><mtext>TeX</mtext></mrow><annotation encoding="application/x-tex">\rm S^{imple}_{ystem}\TeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.3489em;vertical-align:-0.3819em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.967em;"><span style="top:-2.4542em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">ystem</span></span></span></span><span style="top:-3.1809em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">imple</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3819em;"><span></span></span></span></span></span></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span></a>
+<ul>
+<li><a href="#MITA%E9%A1%B9%E7%9B%AE#SimpleSystemTeX#Logo">Logo</a></li>
+<li><a href="#MITA%E9%A1%B9%E7%9B%AE#SimpleSystemTeX#%E8%81%94%E5%90%88%E5%A3%B0%E6%98%8E">联合声明</a></li>
+<li><a href="#MITA%E9%A1%B9%E7%9B%AE#SimpleSystemTeX#%E5%8F%91%E8%A1%8C%E7%89%88%E6%9C%AC">发行版本</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#MITA%E6%B4%BB%E5%8A%A8">MITA 活动</a>
+<ul>
+<li><a href="#MITA%E6%B4%BB%E5%8A%A8#%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9BI">数学竞赛 I</a></li>
+<li><a href="#MITA%E6%B4%BB%E5%8A%A8#%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9BII">数学竞赛 II</a></li>
+<li><a href="#MITA%E6%B4%BB%E5%8A%A8#%E2%80%9C%E8%8A%B1%E6%A2%A8%E6%9D%AF%E2%80%9D%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E6%8C%91%E6%88%98%E8%B5%9B">“花梨杯”数学建模挑战赛</a></li>
+<li><a href="#MITA%E6%B4%BB%E5%8A%A8#%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B">算法设计竞赛</a></li>
+<li><a href="#MITA%E6%B4%BB%E5%8A%A8#%E2%80%9C%E6%95%B0%E5%AD%A6%E8%BE%BE%E4%BA%BA%E2%80%9D%E6%8C%91%E6%88%98%E8%B5%9B">“数学达人”挑战赛</a>
+<ul>
+<li><a href="#MITA%E6%B4%BB%E5%8A%A8#%E2%80%9C%E6%95%B0%E5%AD%A6%E8%BE%BE%E4%BA%BA%E2%80%9D%E6%8C%91%E6%88%98%E8%B5%9B#%E5%B8%B8%E8%A7%84%E8%B5%9B">常规赛</a></li>
+<li><a href="#MITA%E6%B4%BB%E5%8A%A8#%E2%80%9C%E6%95%B0%E5%AD%A6%E8%BE%BE%E4%BA%BA%E2%80%9D%E6%8C%91%E6%88%98%E8%B5%9B#%E5%AD%A3%E5%90%8E%E8%B5%9B">季后赛</a></li>
+</ul>
+</li>
+<li><a href="#MITA%E6%B4%BB%E5%8A%A8#MITA%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%80%E8%AF%BE">MITA 数学公开课</a></li>
+<li><a href="#MITA%E6%B4%BB%E5%8A%A8#MITA%E7%9F%A5%E8%AF%86%E8%AE%B2%E5%BA%A7/%E5%88%86%E4%BA%AB%E4%BC%9A">MITA 知识讲座/分享会</a></li>
+</ul>
+</li>
+<li><a href="#MITA%E6%96%87%E4%BB%B6%E8%A7%84%E8%8C%83">MITA 文件规范</a>
+<ul>
+<li><a href="#MITA%E6%96%87%E4%BB%B6%E8%A7%84%E8%8C%83#Markdown%E8%A7%84%E8%8C%83">Markdown 规范</a></li>
+<li><a href="#MITA%E6%96%87%E4%BB%B6%E8%A7%84%E8%8C%83#LaTeX%E8%A7%84%E8%8C%83"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> 规范</a></li>
+<li><a href="#MITA%E6%96%87%E4%BB%B6%E8%A7%84%E8%8C%83#PDF%E6%96%87%E4%BB%B6%E5%8A%A0%E5%AF%86%E8%A7%84%E6%A0%BC">PDF 文件加密规格</a></li>
+</ul>
+</li>
+<li><a href="#%E9%99%84%E5%BD%95">附录</a>
+<ul>
+<li><a href="#%E9%99%84%E5%BD%95#%E7%9B%B8%E5%85%B3%E6%B3%95%E5%BE%8B%E6%9D%A1%E6%AC%BE">相关法律条款</a>
+<ul>
+<li><a href="#%E9%99%84%E5%BD%95#%E7%9B%B8%E5%85%B3%E6%B3%95%E5%BE%8B%E6%9D%A1%E6%AC%BE#MITLicense">MIT License</a></li>
+<li><a href="#%E9%99%84%E5%BD%95#%E7%9B%B8%E5%85%B3%E6%B3%95%E5%BE%8B%E6%9D%A1%E6%AC%BE#Attribution-NonCommercial-ShareAlike4.0InternationalDeed">Attribution-NonCommercial-ShareAlike 4.0 International Deed</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="前言">前言 </h2>
+<h3 id="前言#社团介绍">社团介绍 </h3>
+<p><strong>官方名称</strong><br>
+<code>数学与智能科技协会</code></p>
+<p><strong>简称</strong><br>
+<code>MITA</code><br>
+<code>华理数协</code><br>
+<code>MITA华理数协</code><br>
+<code>华理数协MITA</code></p>
+<p><strong>性质</strong><br>
+华东理工大学 ( ECUST ) 学生社团</p>
+<p><strong>Logo</strong><br>
+<img src="../MITA%20Logo/MITA%20Logo.png" alt="MITA Logo"></p>
+<p><strong>荣誉墙</strong></p>
+<ul>
+<li>2021年度华东理工大学创新创业类特色学生社团</li>
+<li>2021年度校五星社团</li>
+<li>2022年度校四星社团</li>
+<li>2023年度上海市高校活力社团</li>
+</ul>
+<h3 id="前言#社团发展原则">社团发展原则 </h3>
+<ul>
+<li>数学是一种工具、一门语言，也是一件艺术品，通过深入本质的高观点展现数学之美是 MITA 的核心宗旨，通过丰富多彩的数学活动传播数学文化是 MITA 的发展目标</li>
+<li>所有的努力致力于将 MITA 打造为
+<ul>
+<li>学习互助平台: MITA 鼓励会员们提出问题、交流问题、解答问题，在互助中不断提升自我，努力践行日拱一卒的学习精神</li>
+<li>资源共享平台: MITA 鼓励会员共享学习资源，并保证同等地向会员提供任何学习资源，努力实现教育资源的公平化</li>
+<li>竞赛交流平台: MITA 鼓励会员积极参加各类校内外竞赛，邀请竞赛经验丰富的选手分享竞赛经验，努力提升全社团/全校竞赛水平</li>
+</ul>
+</li>
+</ul>
+<h3 id="前言#会员守则">会员守则 </h3>
+<p><strong>作为 MITA 会员，您必须满足以下条件：</strong></p>
+<ul>
+<li>政治立场鲜明</li>
+<li>具有良好的生活/学习作风</li>
+<li>热爱数学及其相关学科</li>
+<li>无犯罪记录，无违纪违规行为</li>
+<li>作为或曾经作为<strong>华东理工大学</strong>在校学生</li>
+</ul>
+<p><strong>作为 MITA 会员，您必须遵守以下规则：</strong></p>
+<ul>
+<li>严格遵守国家法律法规、学校规定</li>
+<li>不得在未经许可时使用 MITA 的名义从事任何活动</li>
+<li>不得随意修改或侮辱 MITA 的官方名称、简称和 Logo 等信息</li>
+<li>相互尊重，团结协作，文明交流，营造和谐的社团氛围</li>
+<li>自觉维护 MITA 集体荣誉和形象，不做任何损害 MITA 利益和声誉的行为</li>
+<li>可以出于任何非商业目的使用 MITA 资源，但不能以任何方式明示/暗示 MITA 认可您的使用方式</li>
+<li>可以对 MITA 的决策提出异议，但必须遵守该手册中的全部条款</li>
+</ul>
+<p><strong>若您不满足以上条件或未遵守以上规则，MITA 有权对您的会员身份和社团职务作出更改</strong></p>
+<hr>
+<h2 id="组织架构">组织架构 </h2>
+<ul>
+<li>MITA 组织架构中包含 4 种职级，决策权高到低分别为
+<ul>
+<li>社长</li>
+<li>副社长</li>
+<li>核心骨干</li>
+<li>骨干</li>
+</ul>
+</li>
+<li>下面的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mtext> </mtext><mi>n</mi></mrow><annotation encoding="application/x-tex">\times\,n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">×</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span></span></span></span> 表示该职位的最大人员数量</li>
+<li>每位 MITA 会员可担任的职务数量不受限制，若同时担任多个职务，则其职级由其中最大者确定</li>
+<li>社长职级任期限定为大二至大三年级，每一届社长负责下一届社长的选定和交接工作</li>
+<li>除社长外的职级任期限定为大一至大四年级，所有职位调动事项由对应部门最高职级会员决策并执行</li>
+</ul>
+<h3 id="组织架构#事务部">事务部 </h3>
+<p><strong>主要负责社团各类事务的管理工作</strong></p>
+<ul>
+<li>事务部 首席部长（社长）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mtext> </mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">\times\,1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">×</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span></span></span></span>
+<ul>
+<li>负责各类会议和评选出席、各类活动材料提交、社团年度评选和交接工作安排</li>
+<li>具有较强的语言表达能力、决策能力和执行能力，以及工作热情</li>
+</ul>
+</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>事务部 财务部长（副社长）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mtext> </mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">\times\,1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">×</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span></span></span></span>
+<ul>
+<li>负责经费管理和财务报销</li>
+<li>具有基本财务知识和严谨的工作态度，以及工作热情</li>
+</ul>
+</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>事务部 人力资源部长（副社长）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mtext> </mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">\times\,1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">×</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span></span></span></span>
+<ul>
+<li>负责会员统计及相关申报工作</li>
+<li>具有基本管理能力和严谨的工作态度，以及工作热情</li>
+</ul>
+</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>事务部 部员（骨干）
+<ul>
+<li>负责 <a href="#%E5%8F%8C%E5%90%91%E6%8E%88%E6%9D%83%E7%AE%A1%E7%90%86">合作对接</a> 并协助<strong>事务部综合部长</strong>完成各项工作</li>
+<li>具有工作热情</li>
+</ul>
+</li>
+</ul>
+<h3 id="组织架构#学术部">学术部 </h3>
+<p><strong>主要负责 <a href="#MITA%E9%A1%B9%E7%9B%AE">MITA 项目</a> 管理和 <a href="#MITA%E6%B4%BB%E5%8A%A8">MITA 数学竞赛</a> 相关活动</strong></p>
+<ul>
+<li>学术部 部长（副社长）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mtext> </mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">\times\,1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">×</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span></span></span></span>
+<ul>
+<li>负责 <a href="#MITA%E9%A1%B9%E7%9B%AE">MITA 项目</a> 管理和 <a href="#MITA%E6%B4%BB%E5%8A%A8">MITA 数学竞赛</a> 相关内容</li>
+<li>具有极强的学习能力和对数学的热爱</li>
+</ul>
+</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>学术部 副部长（核心骨干）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mtext> </mtext><mn>2</mn></mrow><annotation encoding="application/x-tex">\times\,2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">×</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span></span></span></span>
+<ul>
+<li>协助<strong>学术部部长</strong>完成各项工作</li>
+<li>具有良好的学习能力和对数学的热爱</li>
+</ul>
+</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>学术部 部员（骨干）
+<ul>
+<li>协助<strong>学术部部长</strong>完成各项工作</li>
+<li>具有良好的学习能力和对数学的热爱</li>
+</ul>
+</li>
+</ul>
+<h3 id="组织架构#竞赛部">竞赛部 </h3>
+<p><strong>主要负责 <a href="#MITA%E6%B4%BB%E5%8A%A8">MITA 数学建模竞赛 &amp; 算法设计竞赛</a> 相关活动</strong></p>
+<ul>
+<li>竞赛部 策划部长（副社长）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mtext> </mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">\times\,1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">×</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span></span></span></span>
+<ul>
+<li>负责策划 <a href="#MITA%E6%B4%BB%E5%8A%A8">MITA 数学建模竞赛 &amp; 算法设计竞赛</a> 并管理 <a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E9%82%AE%E7%AE%B1#%E8%B5%9B%E4%BA%8B%E9%82%AE%E7%AE%B1">赛事邮箱</a></li>
+<li>具有丰富竞赛经验，以及优秀的策划能力</li>
+</ul>
+</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>竞赛部 数模部长（核心骨干）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mtext> </mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">\times\,1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">×</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span></span></span></span>
+<ul>
+<li>负责 <a href="#MITA%E6%B4%BB%E5%8A%A8">MITA 数学建模竞赛</a> 相关内容</li>
+<li>具有丰富的数学建模竞赛经验和获奖经历，以及分享知识的热情</li>
+</ul>
+</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>竞赛部 算法部长（核心骨干）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mtext> </mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">\times\,1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">×</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span></span></span></span>
+<ul>
+<li>负责 <a href="#MITA%E6%B4%BB%E5%8A%A8">MITA 算法设计竞赛</a> 相关内容</li>
+<li>具有丰富的算法设计竞赛经验和获奖经历，以及分享知识的热情</li>
+</ul>
+</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>竞赛部 部员（骨干）
+<ul>
+<li>协助<strong>竞赛部策划部长</strong>完成各项工作</li>
+<li>具有丰富竞赛经验和分享知识的热情</li>
+</ul>
+</li>
+</ul>
+<h3 id="组织架构#运营部">运营部 </h3>
+<p><strong>主要负责 <a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86">账号管理</a> 和宣传招新及相关申报工作</strong></p>
+<ul>
+<li>运营部 管理部长（核心骨干）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mtext> </mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">\times\,1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">×</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span></span></span></span>
+<ul>
+<li>负责宣传招新及相关申报工作</li>
+<li>具有优秀的策划能力和工作热情</li>
+</ul>
+</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>运营部 技术部长（核心骨干）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mtext> </mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">\times\,1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">×</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span></span></span></span>
+<ul>
+<li>负责 <a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%9F%9F%E5%90%8D">域名运营</a> 和 <a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#Github%E8%B4%A6%E5%8F%B7">Github 账号运营</a></li>
+<li>具有优秀的网络素养和网络平台运营经验，以及工作热情</li>
+</ul>
+</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>运营部 部员（骨干）
+<ul>
+<li>负责 <a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86">各网络平台账号运营（除域名和 Github 账号外）</a> 并协助<strong>运营部管理部长</strong>完成各项工作</li>
+<li>具有网络平台运营经验和工作热情</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="账号管理">账号管理 </h2>
+<h3 id="账号管理#邮箱">邮箱 </h3>
+<h4 id="账号管理#邮箱#官方邮箱">官方邮箱 </h4>
+<p><strong>邮箱地址</strong><br>
+<a href="mailto:mita2025@126.com">mita2025@126.com</a></p>
+<p><strong>绑定手机</strong><br>
+<code>15921597270</code></p>
+<h4 id="账号管理#邮箱#赛事邮箱">赛事邮箱 </h4>
+<p><strong>邮箱地址</strong><br>
+<a href="mailto:mita_event@126.com">mita_event@126.com</a>（尚未注册）</p>
+<p><strong>绑定手机</strong><br>
+<code> </code></p>
+<h4 id="账号管理#邮箱#说明">说明 </h4>
+<ul>
+<li>邮箱地址不区分大小写字母</li>
+<li>赛事邮箱由 <a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E7%AB%9E%E8%B5%9B%E9%83%A8">竞赛部</a> 负责管理</li>
+<li>每次交接后请注意<mark>修改绑定手机信息</mark></li>
+<li>若需添加更多邮箱，可添加更多四级标题以补充，建议新添加的非特殊用途邮箱地址以注册年份命名，即<code>mita20xx@126.com</code></li>
+</ul>
+<h3 id="账号管理#域名">域名 </h3>
+<h4 id="账号管理#域名#官方网站">官方网站 </h4>
+<p><strong>域名</strong><br>
+<code> </code></p>
+<h4 id="账号管理#域名#说明">说明 </h4>
+<ul>
+<li>域名不区分大小写字母</li>
+<li>若需添加更多域名，可添加更多四级标题以补充</li>
+</ul>
+<h3 id="账号管理#QQ群">QQ 群 </h3>
+<h4 id="账号管理#QQ群#社团总群">社团总群 </h4>
+<p><strong>群号</strong><br>
+<code>1062803942</code></p>
+<p><strong>群人数上限</strong><br>
+500</p>
+<h4 id="账号管理#QQ群#“数学达人”季后赛群">“数学达人”季后赛群 </h4>
+<p><strong>群号</strong><br>
+<code> </code></p>
+<p><strong>群人数上限</strong><br>
+200</p>
+<h4 id="账号管理#QQ群#“花梨杯”数学建模挑战赛群">“花梨杯”数学建模挑战赛群 </h4>
+<p><strong>群号</strong><br>
+<code> </code></p>
+<p><strong>群人数上限</strong><br>
+200</p>
+<h4 id="账号管理#QQ群#说明">说明 </h4>
+<ul>
+<li>社团总群必须每年更换，其他 QQ 群建议定期更换，群更换后原有群可保留</li>
+<li>每次交接后请注意<mark>修改群号信息</mark></li>
+<li>若需添加更多 QQ 群，可添加更多四级标题以补充</li>
+</ul>
+<h3 id="账号管理#微信公众号">微信公众号 </h3>
+<h4 id="账号管理#微信公众号#官方公众号">官方公众号 </h4>
+<p><strong>账号名称</strong><br>
+<code>华理数协MITA</code></p>
+<p><strong>管理员微信号/手机号</strong><br>
+<code>JokerXin_2025</code>/<code>15921597270</code>（尚未召回）</p>
+<h4 id="账号管理#微信公众号#说明">说明 </h4>
+<ul>
+<li>每次交接后请注意<mark>修改管理员微信号/手机号信息</mark></li>
+<li>不建议添加更多微信公众号</li>
+</ul>
+<h3 id="账号管理#Github账号">Github 账号 </h3>
+<h4 id="账号管理#Github账号#官方账号">官方账号 </h4>
+<p><strong>账号 ID</strong><br>
+<code>MITA-2025</code></p>
+<p><strong>账号名称</strong><br>
+<code>MITA 数学与智能科技协会</code></p>
+<p><strong>绑定邮箱</strong><br>
+<a href="mailto:mita2025@126.com">mita2025@126.com</a></p>
+<h4 id="账号管理#Github账号#说明">说明 </h4>
+<ul>
+<li>若需添加更多 Github 账号，可添加更多四级标题以补充，建议新添加的账号 ID 以注册年份命名，即<code>MITA-20xx</code></li>
+</ul>
+<h3 id="账号管理#哔哩哔哩账号">哔哩哔哩账号 </h3>
+<h4 id="账号管理#哔哩哔哩账号#官方账号">官方账号 </h4>
+<p><strong>账号 ID</strong><br>
+<code>3546981368596533</code></p>
+<p><strong>账号名称</strong><br>
+<code>MITA华理数协</code></p>
+<p><strong>绑定手机</strong><br>
+<code>15216891736</code></p>
+<h4 id="账号管理#哔哩哔哩账号#说明">说明 </h4>
+<ul>
+<li>每次交接后请注意<mark>修改绑定手机信息</mark></li>
+<li>若需添加更多哔哩哔哩账号，可添加更多四级标题以补充</li>
+</ul>
+<hr>
+<h2 id="双向授权管理">双向授权管理 </h2>
+<h3 id="双向授权管理#知乎账号JokerXin的工作室">知乎账号 <code>JokerXin的工作室</code> </h3>
+<h3 id="双向授权管理#Github账号JokerXin2025">Github 账号 <code>JokerXin2025</code> </h3>
+<hr>
+<h2 id="MITA项目">MITA 项目 </h2>
+<h3 id="MITA项目#MITA数学手册">MITA 数学手册 </h3>
+<p><strong>Github 仓库地址</strong><br>
+<a href="https://github.com/MITA-2025/MITA_MathBook%EF%BC%88%E5%B0%9A%E6%9C%AA%E4%B8%8A%E4%BC%A0%EF%BC%89">https://github.com/MITA-2025/MITA_MathBook（尚未上传）</a></p>
+<ul>
+<li>该项目由学术部负责</li>
+<li>作为 MITA 开放资料（开源）</li>
+<li>主要内容为非数学专业的应试技巧，例如
+<ul>
+<li>微分算子法解微分方程</li>
+<li>双元法求不定积分</li>
+</ul>
+</li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#QQ%E7%BE%A4#%E7%A4%BE%E5%9B%A2%E6%80%BB%E7%BE%A4">MITA 社团总群</a> 定期发布最新版本（仅保留最新版本）</li>
+<li>MITA 提供纸质版代理制作服务</li>
+</ul>
+<h4 id="MITA项目#MITA数学手册#发行版本">发行版本 </h4>
+<ul>
+<li><strong>2025 招新版（特别版本）</strong><br>
+详细内容请见 <a href="">Github 仓库</a></li>
+</ul>
+<h3 id="MITA项目#MITA数学讲义">MITA 数学讲义 </h3>
+<p><strong>Github 仓库地址</strong><br>
+<a href="https://github.com/MITA-2025/MITA_Notes">https://github.com/MITA-2025/MITA_Notes</a></p>
+<ul>
+<li>该项目由学术部负责</li>
+<li>作为 MITA 开放资料（开源）</li>
+<li>主要内容为数学专业的高阶知识，例如
+<ul>
+<li>流形上的微积分</li>
+<li>滤子在 Tychonoff 定理证明中的应用</li>
+</ul>
+</li>
+<li>施工中的讲义包括
+<ul>
+<li>数理逻辑 Mathematical Logic</li>
+<li>拓扑 General Topology</li>
+<li>代数 Modern Algebra</li>
+</ul>
+</li>
+<li>MITA 官网/公众号 定期发布最新版本（保留所有版本）</li>
+<li>MITA 提供纸质版代理制作服务</li>
+<li>该项目签署 <a href="#%E9%99%84%E5%BD%95#%E7%9B%B8%E5%85%B3%E6%B3%95%E5%BE%8B%E6%9D%A1%E6%AC%BE#Attribution-NonCommercial-ShareAlike4.0InternationalDeed">Attribution-NonCommercial-ShareAlike 4.0 International Deed</a></li>
+</ul>
+<h4 id="MITA项目#MITA数学讲义#发行版本">发行版本 </h4>
+<h3 id="MITA项目#SimpleSystemTeX"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi mathvariant="normal">S</mi><mrow><mi mathvariant="normal">y</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi></mrow></msubsup><mtext>TeX</mtext></mrow><annotation encoding="application/x-tex">\rm S^{imple}_{ystem}\TeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.3489em;vertical-align:-0.3819em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.967em;"><span style="top:-2.4542em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">ystem</span></span></span></span><span style="top:-3.1809em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">imple</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3819em;"><span></span></span></span></span></span></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> </h3>
+<p><strong>Github 仓库地址</strong><br>
+<a href="https://github.com/JokerXin2025/SimpleSystemTeX%EF%BC%88%E5%B0%9A%E6%9C%AA%E4%B8%8A%E4%BC%A0%EF%BC%89">https://github.com/JokerXin2025/SimpleSystemTeX（尚未上传）</a></p>
+<ul>
+<li>该项目为 MITA <a href="#%E5%8F%8C%E5%90%91%E6%8E%88%E6%9D%83%E7%AE%A1%E7%90%86#Github%E8%B4%A6%E5%8F%B7JokerXin2025">代理项目</a></li>
+<li>作为 MITA 官方指定 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> 模版（开源）</li>
+<li>代理期内于 <a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%9F%9F%E5%90%8D#%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99">MITA 官方网站</a> 定期发布最新版本（保留所有版本）</li>
+<li>该项目签署 <a href="#%E9%99%84%E5%BD%95#%E7%9B%B8%E5%85%B3%E6%B3%95%E5%BE%8B%E6%9D%A1%E6%AC%BE#MITLicense">MIT License</a></li>
+</ul>
+<h4 id="MITA项目#SimpleSystemTeX#Logo">Logo </h4>
+<p><img src="../MITA%20Logo/SimpleSystemTeX%20Logo.png" alt="SimpleSystemTeX Logo"></p>
+<h4 id="MITA项目#SimpleSystemTeX#发行版本">发行版本 </h4>
+<hr>
+<h2 id="MITA活动">MITA 活动 </h2>
+<h3 id="MITA活动#数学竞赛I">数学竞赛 I </h3>
+<ul>
+<li>该活动面向全校本科生开放（<strong>数学与应用数学</strong>专业除外）</li>
+<li>该活动由 <a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E5%AD%A6%E6%9C%AF%E9%83%A8">学术部</a> 负责</li>
+<li>初赛时间定于每年年底</li>
+<li>初赛在线上举行，参赛者可在 <a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%9F%9F%E5%90%8D#%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99">MITA 官方网站</a> 进行报名，并于参赛时间将作答内容提交至 <a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E9%82%AE%E7%AE%B1#%E8%B5%9B%E4%BA%8B%E9%82%AE%E7%AE%B1">赛事邮箱</a></li>
+<li>初赛内容涉及如下课程
+<ul>
+<li>《高等数学》（上）</li>
+</ul>
+</li>
+<li>决赛时间为每年 3 月 14 日（可根据实际情况修改）</li>
+<li>决赛参赛者名单由初赛排名决定，人数控制在 50 人左右</li>
+<li>决赛内容涉及如下课程
+<ul>
+<li>《高等数学》（上）</li>
+<li>《高等数学》（下）</li>
+<li>《线性代数》</li>
+</ul>
+</li>
+<li>所有进入决赛的参赛者都可以获得最新版 <a href="#MITA%E9%A1%B9%E7%9B%AE#MITA%E6%95%B0%E5%AD%A6%E6%89%8B%E5%86%8C">MITA 数学手册</a> 作为奖品，决赛设有优胜奖、一等奖、二等奖、三等奖</li>
+<li><a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E8%BF%90%E8%90%A5%E9%83%A8">运营部</a> 负责活动宣传</li>
+</ul>
+<h3 id="MITA活动#数学竞赛II">数学竞赛 II </h3>
+<ul>
+<li>该活动面向全校本科生开放（<strong>数学与应用数学</strong>专业的<strong>大三/大四</strong>年级除外）</li>
+<li>该活动由 <a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E5%AD%A6%E6%9C%AF%E9%83%A8">学术部</a> 负责</li>
+<li>比赛时间为每年 3 月 14 日（可根据实际情况修改）</li>
+<li>参赛者可在 <a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#%E5%9F%9F%E5%90%8D#%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99">MITA 官方网站</a> 进行报名</li>
+<li>比赛内容涉及如下课程
+<ul>
+<li>《数学分析》（上）</li>
+<li>《数学分析》（中）</li>
+<li>《数学分析》（下）</li>
+<li>《高等代数》（上）</li>
+<li>《高等代数》（下）</li>
+<li>《解析几何》</li>
+</ul>
+</li>
+<li>前 20% 参赛者可以获得 <a href="#MITA%E9%A1%B9%E7%9B%AE#MITA%E6%95%B0%E5%AD%A6%E8%AE%B2%E4%B9%89">MITA 数学讲义</a> 最新合订本作为奖品，并设有优胜奖、一等奖、二等奖、三等奖</li>
+<li><a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E8%BF%90%E8%90%A5%E9%83%A8">运营部</a> 负责活动宣传</li>
+</ul>
+<h3 id="MITA活动#“花梨杯”数学建模挑战赛">“花梨杯”数学建模挑战赛 </h3>
+<ul>
+<li>该活动面向全校开放</li>
+<li>该活动由 <a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E7%AB%9E%E8%B5%9B%E9%83%A8">竞赛部</a> 负责</li>
+<li>比赛时间为每年 5 月中旬（15 天左右）</li>
+<li>该挑战赛仿照正式赛事形式与流程，要求三人一组组队参赛（不限专业）</li>
+<li>参赛者可报名进入 <a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#QQ%E7%BE%A4#%E2%80%9C%E8%8A%B1%E6%A2%A8%E6%9D%AF%E2%80%9D%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E6%8C%91%E6%88%98%E8%B5%9B%E7%BE%A4">MITA “花梨杯”数学建模挑战赛群</a> ，赛题和赛事说明统一发布在群内</li>
+<li><a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E8%BF%90%E8%90%A5%E9%83%A8">运营部</a> 负责活动宣传和获奖论文的集中展示</li>
+</ul>
+<h3 id="MITA活动#算法设计竞赛">算法设计竞赛 </h3>
+<ul>
+<li>该活动面向全校开放</li>
+<li>该活动由 <a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E7%AB%9E%E8%B5%9B%E9%83%A8">竞赛部</a> 负责</li>
+<li>赛制类似蓝桥杯等大型赛事，具体办法待定</li>
+<li><a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E8%BF%90%E8%90%A5%E9%83%A8">运营部</a> 负责活动宣传</li>
+</ul>
+<h3 id="MITA活动#“数学达人”挑战赛">“数学达人”挑战赛 </h3>
+<ul>
+<li>该活动仅面向 MITA 会员开放</li>
+<li>该活动由 <a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E5%AD%A6%E6%9C%AF%E9%83%A8">学术部</a> 负责</li>
+</ul>
+<h4 id="MITA活动#“数学达人”挑战赛#常规赛">常规赛 </h4>
+<ul>
+<li>每年 10 月至 12 月和 3 月至 5 月举办（各 80 天左右）</li>
+<li>每周日 18:00 在 <a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#QQ%E7%BE%A4#%E7%A4%BE%E5%9B%A2%E6%80%BB%E7%BE%A4">MITA 社团总群</a> 内发布 2 道思考题，参赛者可在活动期间将作答内容提交至赛事邮箱，学术部根据回答情况和相应标准计算积分，积分计算方式不公开</li>
+<li>常规赛每月结算，结算期间参赛者可使用已获得的积分兑换奖品</li>
+</ul>
+<h4 id="MITA活动#“数学达人”挑战赛#季后赛">季后赛 </h4>
+<ul>
+<li>每年寒假/暑假期间举办（20/50 天左右）</li>
+<li>每日 12:00 在 <a href="#%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86#QQ%E7%BE%A4#%E2%80%9C%E6%95%B0%E5%AD%A6%E8%BE%BE%E4%BA%BA%E2%80%9D%E5%AD%A3%E5%90%8E%E8%B5%9B%E7%BE%A4">MITA “数学达人”季后赛群</a> 内发布 A B C D E 组赛题各一道（依据难度递增），18:00 - 18:05 期间参赛者可以在群内上传作答内容（照片/PDF）并获得 3 倍积分，其余任何时间上传的答案均以 1 倍积分积分计算，次日 12:00 停止计算当日积分</li>
+<li>各组基础积分为：A 1、B 1、C 2、D 2、E 3</li>
+<li>季后赛结算期间，参赛者可使用已获得的积分兑换奖品</li>
+</ul>
+<h3 id="MITA活动#MITA数学公开课">MITA 数学公开课 </h3>
+<ul>
+<li>该活动面向全校开放</li>
+<li>该活动由 <a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E5%AD%A6%E6%9C%AF%E9%83%A8">学术部</a> 负责</li>
+<li>内容基于 <a href="#MITA%E9%A1%B9%E7%9B%AE#MITA%E6%95%B0%E5%AD%A6%E6%89%8B%E5%86%8C">MITA 数学手册</a> 和 <a href="#MITA%E9%A1%B9%E7%9B%AE#MITA%E6%95%B0%E5%AD%A6%E8%AE%B2%E4%B9%89">MITA 数学讲义</a></li>
+<li><a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E8%BF%90%E8%90%A5%E9%83%A8">运营部</a> 负责活动宣传</li>
+</ul>
+<h3 id="MITA活动#MITA知识讲座/分享会">MITA 知识讲座/分享会 </h3>
+<ul>
+<li>该活动仅面向全校开放</li>
+<li>数学类内容由 <a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E5%AD%A6%E6%9C%AF%E9%83%A8">学术部</a> 负责，算法类和建模类内容由 <a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E7%AB%9E%E8%B5%9B%E9%83%A8">竞赛部</a> 负责</li>
+<li>包含 CMC/建模国赛/建模美赛/蓝桥杯/ACM-ICPC/CCPC/百度之星/马蹄杯 等各类竞赛知识点讲解、数学工具分享会、竞赛心得分享会</li>
+<li>每年必须举办的固定讲座/分享会包括：
+<ul>
+<li>（数学类）Markdown 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> 基础</li>
+<li>（数学类）CMC 基本介绍和相关书籍推荐</li>
+<li>（算法类）C++ 核心语法</li>
+<li>（算法类）算法基础与简单数据结构</li>
+<li>（建模类）数学建模及相关比赛入门导引</li>
+<li>（建模类）Matlab、Python、Lingo 等建模工具</li>
+</ul>
+</li>
+<li><a href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84#%E8%BF%90%E8%90%A5%E9%83%A8">运营部</a> 负责活动宣传</li>
+</ul>
+<p><strong>说明</strong></p>
+<ul>
+<li>每年可在上述方案中选择适合当届资源的活动举办</li>
+<li>可对上述活动方案进行补充或修改</li>
+</ul>
+<hr>
+<h2 id="MITA文件规范">MITA 文件规范 </h2>
+<h3 id="MITA文件规范#Markdown规范">Markdown 规范 </h3>
+<h3 id="MITA文件规范#LaTeX规范"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.905em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> 规范 </h3>
+<h3 id="MITA文件规范#PDF文件加密规格">PDF 文件加密规格 </h3>
+<hr>
+<h2 id="附录">附录 </h2>
+<h3 id="附录#相关法律条款">相关法律条款 </h3>
+<p>此节给出部分 <a href="#MITA%E9%A1%B9%E7%9B%AE">MITA 项目</a> 所签署的法律条款</p>
+<h4 id="附录#相关法律条款#MITLicense">MIT License </h4>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>MIT License
+
+Copyright (c) 2025 MITA 数学与智能科技协会
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</code></pre><h4 id="附录#相关法律条款#Attribution-NonCommercial-ShareAlike4.0InternationalDeed">Attribution-NonCommercial-ShareAlike 4.0 International Deed </h4>
+<h5 id="you-are-free-to">You are free to: </h5>
+<ul>
+<li>Share — copy and redistribute the material in any medium or format</li>
+<li>Adapt — remix, transform, and build upon the material</li>
+</ul>
+<p>The licensor cannot revoke these freedoms as long as you follow the license terms.</p>
+<h5 id="under-the-following-terms">Under the following terms: </h5>
+<ul>
+<li>Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>
+<li>NonCommercial — You may not use the material for commercial purposes.</li>
+<li>ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</li>
+<li>No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.</li>
+</ul>
+<h5 id="notices">Notices: </h5>
+<p>You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.</p>
+<p>No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
